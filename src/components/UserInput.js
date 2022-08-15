@@ -1,14 +1,26 @@
 import "./UserInput.css";
+import { useState } from "react";
 
 const UserInput = (props) => {
+  const [user, setUser] = useState({ username: "", age: "" });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser((prev) => ({ ...prev, [name]: value}));
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
+
   return (
     <div className="card">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>UserName</label>
-        <input></input>
+        <input onChange={handleChange} value={user.username} name="username"></input>
         <label>Age(Years)</label>
-        <input></input>
-        <button>Add User</button>
+        <input onChange={handleChange} value={user.age} name="age" type="number"></input>
+        <button type='submit'>Add User</button>
       </form>
     </div>
   );
