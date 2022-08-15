@@ -1,7 +1,9 @@
+import UserInput from "./components/UserInput";
+
 function App() {
   return (
     <div>
-      hello
+      <UserInput />
     </div>
   );
 }
