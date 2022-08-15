@@ -1,3 +1,13 @@
 h3 {
     margin-left: 0.5rem;
 }
+
+p {
+    display: inline;
+}
+
+.button-delete {
+    background-color: #eb4d4b;
+    position: absolute;
+    right: 0.5rem;
+}
