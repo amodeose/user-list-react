@@ -11,10 +11,16 @@ function App() {
     setUsers(prev => [newUser, ...prev])
   }
 
+  const handleDeleteUser = id => {
+    setUsers(prev => prev.filter(
+      (item, index) => index != id
+    ))
+  }
+
   return (
     <div>
       <UserInput onAddUser={handleAddUser}/>
-      <UserList users={users}/>
+      <UserList users={users} onDeleteUser={handleDeleteUser}/>
     </div>
   );
 }
