@@ -6,21 +6,31 @@ const UserInput = (props) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setUser((prev) => ({ ...prev, [name]: value}));
-  }
+    setUser((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-  }
+    setUser({ username: "", age: "" });
+  };
 
   return (
     <div className="card">
       <form onSubmit={handleSubmit}>
         <label>UserName</label>
-        <input onChange={handleChange} value={user.username} name="username"></input>
+        <input
+          onChange={handleChange}
+          value={user.username}
+          name="username"
+        ></input>
         <label>Age(Years)</label>
-        <input onChange={handleChange} value={user.age} name="age" type="number"></input>
-        <button type='submit'>Add User</button>
+        <input
+          onChange={handleChange}
+          value={user.age}
+          name="age"
+          type="number"
+        ></input>
+        <button type="submit">Add User</button>
       </form>
     </div>
   );
