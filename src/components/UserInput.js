@@ -11,6 +11,7 @@ const UserInput = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.onAddUser(user);
     setUser({ username: "", age: "" });
   };
 

@@ -7,9 +7,13 @@ function App() {
 
   const [users, setUsers] = useState(data);
 
+  const handleAddUser = newUser => {
+    setUsers(prev => [newUser, ...prev])
+  }
+
   return (
     <div>
-      <UserInput />
+      <UserInput onAddUser={handleAddUser}/>
       <UserList users={users}/>
     </div>
   );
