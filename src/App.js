@@ -1,16 +1,16 @@
 import UserInput from "./components/UserInput";
 import UserList from "./components/UserList";
 import data from "./data.js";
+import { useState } from 'react';
 
-console.log(data);
 function App() {
 
-  
+  const [users, setUsers] = useState(data);
 
   return (
     <div>
       <UserInput />
-      <UserList />
+      <UserList users={users}/>
     </div>
   );
 }
