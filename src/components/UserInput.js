@@ -1,5 +1,6 @@
 import "./UserInput.css";
-import { useState } from "react";
+import React, { useState } from "react";
+import ErrorModal from "./ErrorModal";
 
 const UserInput = (props) => {
   const [user, setUser] = useState({ username: "", age: "" });
@@ -16,24 +17,27 @@ const UserInput = (props) => {
   };
 
   return (
-    <div className="card">
-      <form onSubmit={handleSubmit}>
-        <label>UserName</label>
-        <input
-          onChange={handleChange}
-          value={user.username}
-          name="username"
-        ></input>
-        <label>Age(Years)</label>
-        <input
-          onChange={handleChange}
-          value={user.age}
-          name="age"
-          type="number"
-        ></input>
-        <button type="submit">Add User</button>
-      </form>
-    </div>
+    <React.Fragment>
+      <ErrorModal />
+      <div className="card">
+        <form onSubmit={handleSubmit}>
+          <label>UserName</label>
+          <input
+            onChange={handleChange}
+            value={user.username}
+            name="username"
+          ></input>
+          <label>Age(Years)</label>
+          <input
+            onChange={handleChange}
+            value={user.age}
+            name="age"
+            type="number"
+          ></input>
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+    </React.Fragment>
   );
 };
 
