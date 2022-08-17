@@ -1,18 +1,41 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.75);
-  }
-  
-  .modal {
-    position: fixed;
-    top: 30vh;
-    left: 10%;
-    width: 80%;
-    z-index: 100;
-    overflow: hidden;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.90);
+}
+
+.modal {
+  text-align: center;
+  position: fixed;
+  top: 20vh;
+  left: 25%;
+  width: 50%;
+  z-index: 100;
+  overflow: hidden;
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+}
+
+header {
+  background-color: #4834d4;
+  color: white;
+  padding: 0.5rem;
+}
+
+footer {
+  padding: 0.5rem;
+}
+
+footer > button {
+  height: 3rem;
+  width: 4rem;
+}
+
+h1 {
+  margin: 0;
+}
