@@ -4,6 +4,8 @@ import ErrorModal from "./ErrorModal";
 
 const UserInput = (props) => {
   const [user, setUser] = useState({ username: "", age: "" });
+  const [errorStatus, setErrorStatus] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -12,13 +14,22 @@ const UserInput = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.onAddUser(user);
-    setUser({ username: "", age: "" });
+    if (user.age < 0) {
+      setErrorStatus(true);
+      setErrorMessage("Please enter a valid age.");
+      setUser((prev) => ({ ...prev, age: "" }));
+    } else if (user.username.trim().length === 0 || user.age.length === 0) {
+      setErrorStatus(true);
+      setErrorMessage("All inputs fields must be completed.");
+    } else {
+      props.onAddUser(user);
+      setUser({ username: "", age: "" });
+    };
   };
 
   return (
     <React.Fragment>
-      <ErrorModal />
+      {errorStatus && <ErrorModal message={errorMessage}/>}
       <div className="card">
         <form onSubmit={handleSubmit}>
           <label>UserName</label>

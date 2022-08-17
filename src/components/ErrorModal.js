@@ -6,7 +6,7 @@ const ErrorModal = (props) => {
     <React.Fragment>
       <div className="backdrop"></div>
       <div className="modal card">
-        <h2>Error Message</h2>
+        <h2>{props.message}</h2>
         <button>Okay</button>
       </div>
     </React.Fragment>
