@@ -27,9 +27,13 @@ const UserInput = (props) => {
     };
   };
 
+  const acceptError = () => {
+    setErrorStatus(false);
+  }
+
   return (
     <React.Fragment>
-      {errorStatus && <ErrorModal message={errorMessage}/>}
+      {errorStatus && <ErrorModal message={errorMessage} acceptError={acceptError}/>}
       <div className="card">
         <form onSubmit={handleSubmit}>
           <label>UserName</label>
