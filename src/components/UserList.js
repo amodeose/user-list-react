@@ -1,10 +1,10 @@
-import "./UserList.css";
 import User from "./User";
+import Card from "./UI/Card";
 
 const UserList = (props) => {
   return (
     props.users.length > 0 && (
-      <div className="card">
+      <Card>
         {props.users.map((user, index) => (
           <User
             onDeleteUser={props.onDeleteUser}
@@ -14,7 +14,7 @@ const UserList = (props) => {
             age={user.age}
           ></User>
         ))}
-      </div>
+      </Card>
     )
   );
 };

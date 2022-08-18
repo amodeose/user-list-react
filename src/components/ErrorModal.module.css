@@ -21,21 +21,21 @@
   border-radius: 0.5rem;
 }
 
-header {
+.modal header {
   background-color: #4834d4;
   color: white;
   padding: 0.5rem;
 }
 
-footer {
+.modal footer {
   padding: 0.5rem;
 }
 
-footer > button {
+.modal button {
   height: 3rem;
   width: 4rem;
 }
 
-h1 {
+.modal h1 {
   margin: 0;
 }

@@ -1,10 +1,10 @@
-label {
+.userInput label {
     font-weight: bold;
     display: block;
     margin: 0.5rem;
 }
 
-input {
+.userInput input {
     display: block;
     margin: 0.5rem;
     width: 95%;

@@ -1,18 +1,19 @@
-import "./User.css";
+import classes from "./User.module.css";
+import Button from "./UI/Button";
 
 const User = (props) => {
   return (
-    <div>
+    <div className={classes.user}>
       <h3>{props.username}</h3>
       <p>{" (" + props.age + " years old)"}</p>
-      <button
+      <Button
         className="button-delete"
         onClick={() => {
           props.onDeleteUser(props.id);
         }}
       >
         Delete
-      </button>
+      </Button>
     </div>
   );
 };
